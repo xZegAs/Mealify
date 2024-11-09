@@ -164,13 +164,18 @@ body:has(.contact:target) .contact-link::before {
 .header .header-section {
   display: flex;
   flex-wrap: wrap;
+  /* flex-direction: row; */
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
 }
 
 .header .header-section .header-caption {
-  width: 40%;
+  /* width: 40%; */
+  width: 100%;
+  /* text-align: start; */
+  text-align: center;
 }
 
 .header .header-section .header-caption h2 {
@@ -187,13 +192,18 @@ body:has(.contact:target) .contact-link::before {
 .header .header-section .header-caption .hero-btns {
   margin-top: 15px;
   display: flex;
+  flex-wrap: wrap;
+  /* justify-self: start; */
+  justify-content: center;
   gap: 40px;
+  padding-bottom: 20px;
 }
 
 .header .header-section .header-caption .hero-btns .book-btn {
   background-color: #ce1212;
   padding: 15px 25px;
-  border-radius: 0px 50px 50px;
+  /* border-radius: 0px 50px 50px; */
+  border-radius: 50px;
   color: #fff;
   transition: all 0.5s ease-in-out;
 }
@@ -257,7 +267,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .header .header-section .header-img {
-  width: 40%;
+  /* width: 40%; */
+  width: 100%;
   padding-top: 40px;
 }
 
@@ -322,12 +333,14 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .chefs .chefs-section .chef-card {
-  width: calc((100% - 60px) / 3);
+  /* width: calc((100% - 60px) / 3); */
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
   transition: transform 0.5s ease-in-out;
   box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .chefs .chefs-section .chef-card:hover {
@@ -418,7 +431,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .gallery .gallery-section {
-  columns: 3;
+  /* columns: 3; */
+  columns: 1;
   gap: 20px;
 }
 
@@ -485,7 +499,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .contact .contact-section .contact-card {
-  width: calc((100% - 30px) / 2);
+  /* width: calc((100% - 30px) / 2); */
+  width: 100%;
   display: flex;
   gap: 20px;
   padding: 20px;
@@ -502,6 +517,7 @@ body:has(.contact:target) .contact-link::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .contact .contact-section .contact-card .contact-info h3 {
@@ -529,7 +545,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .contact .contact-form .form-group .form-input {
-  width: calc((100% - 20px) / 2);
+  /* width: calc((100% - 20px) / 2); */
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -598,7 +615,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .footer .about {
-  width: calc((100% - 40px) / 4);
+  /* width: calc((100% - 40px) / 4); */
+  width: 100%;
 }
 
 .footer .about .about-title {
@@ -651,7 +669,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .footer .newsletter {
-  width: calc((100% - 40px) / 2);
+  /* width: calc((100% - 40px) / 2); */
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -702,7 +721,8 @@ body:has(.contact:target) .contact-link::before {
 }
 
 .footer .contact-details {
-  width: calc((100% - 40px) / 4);
+  /* width: calc((100% - 40px) / 4); */
+  width: 100%;
 }
 
 .footer .contact-details ul {
@@ -722,3 +742,91 @@ body:has(.contact:target) .contact-link::before {
 }
 
 /* ^======== End Footer ========== */
+
+/* ^======== Media Queries ========== */
+
+@media screen and (min-width: 640px) {
+}
+@media screen and (min-width: 768px) {
+  .chefs .chefs-section .chef-card {
+    width: calc((100% - 60px) / 2);
+  }
+
+  .gallery .gallery-section {
+    columns: 2;
+  }
+
+  .contact .contact-section .contact-card {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .footer .about {
+    width: calc((100% - 40px) / 2);
+    order: 1;
+  }
+
+  .footer .newsletter {
+    width: 100%;
+    order: 3;
+  }
+
+  .footer .contact-details {
+    width: calc((100% - 40px) / 2);
+    order: 2;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header .header-section {
+    flex-direction: row;
+  }
+
+  .header .header-section .header-caption {
+    width: 40%;
+    text-align: start;
+  }
+
+  .header .header-section .header-caption .hero-btns {
+    justify-content: start;
+  }
+
+  .header .header-section .header-caption .hero-btns .book-btn {
+    border-radius: 0px 50px 50px;
+  }
+
+  .header .header-section .header-img {
+    width: 40%;
+  }
+
+  .chefs .chefs-section .chef-card {
+    width: calc((100% - 60px) / 3);
+  }
+
+  .gallery .gallery-section {
+    columns: 3;
+  }
+
+  .contact .contact-form .form-group .form-input {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .footer .about {
+    width: calc((100% - 40px) / 4);
+    order: 1;
+  }
+
+  .footer .newsletter {
+    width: calc((100% - 40px) / 2);
+    order: 2;
+  }
+
+  .footer .contact-details {
+    width: calc((100% - 40px) / 4);
+    order: 3;
+  }
+}
+@media screen and (min-width: 1280px) {
+}
+@media screen and (min-width: 1536px) {
+}
+
+/* ^======== End Media Queries ========== */
