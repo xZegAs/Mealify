@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding: 80.8px;
 }
 
 body {
@@ -776,6 +777,10 @@ body:has(.contact:target) .contact-link::before {
   }
 }
 @media screen and (min-width: 1024px) {
+  .header {
+    min-height: 70vh;
+  }
+
   .header .header-section {
     flex-direction: row;
   }
@@ -825,6 +830,9 @@ body:has(.contact:target) .contact-link::before {
   }
 }
 @media screen and (min-width: 1280px) {
+  .header {
+    min-height: 100vh;
+  }
 }
 @media screen and (min-width: 1536px) {
 }
